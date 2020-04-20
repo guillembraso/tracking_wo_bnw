@@ -11,7 +11,7 @@ from torch.utils.data import Dataset
 import cv2
 
 #from ..config import cfg
-from configs.config import DATA_PATH
+from configs.path_cfg import DATA_PATH
 from torchvision.transforms import ToTensor
 
 

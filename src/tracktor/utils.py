@@ -356,7 +356,7 @@ def get_warp_pyramid(im1, im2, nol, criteria_, warp_mode):
         if level != nol - 1:
             # if True:
             cc, warp = cv2.findTransformECC(gray1_pyr[level], gray2_pyr[level],
-                                            warp, warp_mode, criteria_)
+                                            warp, warp_mode, criteria_, inputMask=None, gaussFiltSize=1)
 
         # if level != nol-1:  # scale up for the next pyramid level
         warp = warp * np.array([[1, 1, 2], [1, 1, 2]], dtype=np.float32)
@@ -364,7 +364,8 @@ def get_warp_pyramid(im1, im2, nol, criteria_, warp_mode):
     # print('Level %i time: '%level, timeit.default_timer() - lvl_start_time)
     # print('Pyramid time:', timeit.default_timer() - pyr_start_time)
 
-    return warp
+    return torch.from_numpy(warp)
+
 
 
 

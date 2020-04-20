@@ -210,7 +210,7 @@ class Tracker:
 				im1_gray = cv2.cvtColor(im1, cv2.COLOR_RGB2GRAY)
 				im2_gray = cv2.cvtColor(im2, cv2.COLOR_RGB2GRAY)
 				warp_matrix = np.eye(2, 3, dtype=np.float32)
-				cc, warp_matrix = cv2.findTransformECC(im1_gray, im2_gray, warp_matrix, self.warp_mode, criteria)
+				cc, warp_matrix = cv2.findTransformECC(im1_gray, im2_gray, warp_matrix, self.warp_mode, criteria, inputMask=None, gaussFiltSize=1)
 				warp_matrix = torch.from_numpy(warp_matrix)
 
 			for t in self.tracks:
