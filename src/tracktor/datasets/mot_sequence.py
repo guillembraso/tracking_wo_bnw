@@ -15,6 +15,7 @@ from mot_neural_solver.path_cfg import DATA_PATH
 from torchvision.transforms import ToTensor
 
 
+
 class MOT17Sequence(Dataset):
     """Multiple Object Tracking Dataset.
 
