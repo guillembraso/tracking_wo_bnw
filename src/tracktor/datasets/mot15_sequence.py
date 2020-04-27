@@ -11,7 +11,7 @@ from torch.utils.data import Dataset
 from torchvision.transforms import ToTensor
 
 #from ..config import cfg
-from configs.path_cfg import DATA_PATH
+from mot_neural_solver.path_cfg import DATA_PATH
 
 class MOT15Sequence(Dataset):
     """Loads a sequence from the 2DMOT15 dataset.
